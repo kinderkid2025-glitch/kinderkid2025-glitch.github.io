@@ -90,10 +90,10 @@
 <body>
 <script src="https://js.puter.com/v2/"></script>
 
-    <!-- <button class="btn-login" id="sign-in" onclick="iniciarAutenticacion()"> -->
-     <a class="btn-login" id="sign-in" href="https://alberto2040.github.io/auth">
+    <button class="btn-login" id="sign-in" onclick="iniciarAutenticacion()">
+     <!-- <a class="btn-login" id="sign-in" href="https://alberto2040.github.io/auth">
         Login
-    </a>
+    </a> -->
     <!-- <a href="intent://alberto2040.github.io/auth#Intent;scheme=https;package=com.jvvl.netrox_ia;end">
   Login
 </a> -->
@@ -102,23 +102,22 @@
 
        document.getElementById('sign-in').addEventListener('click', async () => {
 
-         // window.location.href = "https://alberto2040.github.io/auth";
-           
-            // try{
+       
+            try{
 
-            //     let user     = await puter.auth.signIn();
+                let user     = await puter.auth.signIn();
                 
-            //     puter.print('<div id="user-data" hidden>' + JSON.stringify(user) + '</div>');
+                puter.print('<div id="user-data" hidden>' + JSON.stringify(user) + '</div>');
                 
 
-            //     if (user && Object.keys(user).length > 0) {
-            //         window.location.href = "jvvvl-friend-kid://auth?code=" + JSON.stringify(user);
-            //     } else if (error) {
-            //         window.location.href = "jvvvl-friend-kid://auth?error=" + error;
-            //     }
-            // }catch(error){
-            //     puter.print('Error:<br>' + JSON.stringify(error));
-            // }
+                if (user && Object.keys(user).length > 0) {
+                    window.location.href = "https://alberto2040.github.io/auth?code=" + JSON.stringify(user);
+                } else if (error) {
+                    window.location.href = "https://alberto2040.github.io/auth?error=" + error;
+                }
+            }catch(error){
+                puter.print('Error:<br>' + JSON.stringify(error));
+            }
 
         });
         
