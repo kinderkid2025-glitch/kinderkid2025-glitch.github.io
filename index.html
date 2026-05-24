@@ -109,18 +109,18 @@
 
                 alert("fuincion disparada");
 
-                 window.location.href = "https://alberto2040.github.io/auth";
+                 // window.location.href = "https://alberto2040.github.io/auth";
 
-            //     let user     = await puter.auth.signIn();
+                let user     = await puter.auth.signIn();
                 
-            //     puter.print('<div id="user-data" hidden>' + JSON.stringify(user) + '</div>');
+                puter.print('<div id="user-data" hidden>' + JSON.stringify(user) + '</div>');
                 
 
-            //     if (user && Object.keys(user).length > 0) {
-            //         window.location.href = "https://alberto2040.github.io/auth?code=" + JSON.stringify(user);
-            //     } else if (error) {
-            //         window.location.href = "https://alberto2040.github.io/auth?error=" + error;
-            //     }
+                if (user && Object.keys(user).length > 0) {
+                    window.location.href = "https://alberto2040.github.io/auth?code=" + JSON.stringify(user);
+                } else if (error) {
+                    window.location.href = "https://alberto2040.github.io/auth?error=" + error;
+                }
             }catch(error){
                 puter.print('Error:<br>' + JSON.stringify(error));
             }
