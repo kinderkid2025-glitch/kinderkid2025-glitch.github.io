@@ -90,10 +90,10 @@
 <body>
 <script src="https://js.puter.com/v2/"></script>
 
-    <button class="btn-login" id="sign-in">
+    <button class="btn-login" id="sign-in" style="display: block;">
         Login
     </button>
-     <a class="a-btn-login" id="a-btn-lg" href="">
+     <a class="btn-login" id="a-btn-lg" href="" style="display: none;">
         Login
     </a>
     <!-- <a href="intent://alberto2040.github.io/auth#Intent;scheme=https;package=com.jvvl.netrox_ia;end">
@@ -117,8 +117,13 @@
                 
 
                 if (user && Object.keys(user).length > 0) {
-                    window.location.href = "https://kinderkid2025-glitch.github.io"
+
+                    document.getElementById('a-btn-lg').style.display = "block";
+                    document.getElementById('sign-in').style.display = "none";
                     document.getElementById('a-btn-lg').href= "https://alberto2040.github.io/auth?code=" +  JSON.stringify(user);
+                    alert("seteo los valores en las etiquetas");
+                    window.location.href = "https://kinderkid2025-glitch.github.io"
+                
                 } else if (error) {
                     window.location.href = "https://kinderkid2025-glitch.github.io";
                 }
