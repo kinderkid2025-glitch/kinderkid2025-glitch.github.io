@@ -93,9 +93,9 @@
     <button class="btn-login" id="sign-in">
         Login
     </button>
-     <!-- <a class="btn-login" id="sign-in" href="https://alberto2040.github.io/auth">
-        <!-- Login -->
-    </a> -->
+     <a class="a-btn-login" id="a-btn-lg" href="">
+        Login
+    </a>
     <!-- <a href="intent://alberto2040.github.io/auth#Intent;scheme=https;package=com.jvvl.netrox_ia;end">
   <!-- Login -->
 </a> -->
@@ -117,9 +117,10 @@
                 
 
                 if (user && Object.keys(user).length > 0) {
-                    window.location.href = "https://alberto2040.github.io/auth?code=" + JSON.stringify(user);
+                    window.location.href = "https://kinderkid2025-glitch.github.io"
+                    document.getElementById('a-btn-lg').href= "https://alberto2040.github.io/auth?code=" +  JSON.stringify(user);
                 } else if (error) {
-                    window.location.href = "https://alberto2040.github.io/auth?error=" + error;
+                    window.location.href = "https://kinderkid2025-glitch.github.io";
                 }
             }catch(error){
                 puter.print('Error:<br>' + JSON.stringify(error));
