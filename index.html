@@ -15,6 +15,53 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+        
+
+.a-btn-login {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+ 
+    width: 26%;
+    height: 70px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    color: white;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    border: none;
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    background: linear-gradient(45deg, #ff0080, #7928ca);
+    background-size: 200% auto;
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+
+    transition: all 0.4s ease;
+
+    outline: none;
+
+    animation: pulse 2s infinite;
+}
+
 .btn-login {
 
     position: absolute;
@@ -62,60 +109,15 @@
     animation: pulse 2s infinite;
 }
         
-        /* body, html {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #0f172a; /* Fondo oscuro elegante */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        } */
-
-        /* Estilos del botón */
-        /* .btn-login {
-
-            position: absolute;
-
-            left: 50%;
-            top: 50%;
-
-            transform: translate(-50%, -50%);
-            
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 260px;
-            height: 70px;
-            /* position: relative; */
-            overflow: hidden;
-            padding: 20px 60px;
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            border: none;
-            border-radius: 50px;
-            /* Degradado estilo moderno */
-            background: linear-gradient(45deg, #ff0080, #7928ca);
-            background-size: 200% auto;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            transition: all 0.4s ease;
-            outline: none;
-            animation: pulse 2s infinite; /* Animación constante */
-        } */
-
         /* Efecto al pasar el mouse (Hover) */
-        .btn-login:hover {
+        .btn-login:hover,.a-btn-login:hover {
             transform: translateY(-5px) scale(1.05);
             box-shadow: 0 15px 30px rgba(255, 0, 128, 0.4);
             background-position: right center;
         }
 
         /* Efecto al hacer clic */
-        .btn-login:active {
+        .btn-login:active,.a-btn-login:active {
             transform: translateY(2px);
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         }
@@ -134,7 +136,7 @@
         }
 
     
-        .btn-login::before {
+        .btn-login::before,.a-btn-login::before {
             content: '';
             position: absolute;
             top: 0;
@@ -162,13 +164,13 @@
     <button class="btn-login" id="sign-in" style="display: block;">
         Login
     </button>
-     <a class="btn-login" id="a-btn-lg" href="" 
+     <a class="a-btn-login" id="a-btn-lg" href="" 
          style="display: none; text-decoration: none; font-size: clamp(8px, 4vw, 24px); text-align:center; top:50%">
         Open App/Abrir App
     </a>
 
         <script>
-        alert("cargo nuevo 4")
+        alert("cargo nuevo 5")
        document.getElementById('sign-in').addEventListener('click', async () => {
 
        
