@@ -107,7 +107,9 @@
        
             try{
 
-                alert("fuincion disparada 2");
+                alert("fuincion disparada 3");
+
+                history.pushState({ page: "login" }, "", "/");
 
                  // window.location.href = "https://alberto2040.github.io/auth";
 
@@ -122,7 +124,8 @@
                     document.getElementById('sign-in').style.display = "none";
                     document.getElementById('a-btn-lg').href= "https://alberto2040.github.io/auth?code=" +  JSON.stringify(user);
                     alert("seteo los valores en las etiquetas");
-                    window.location.href = "https://kinderkid2025-glitch.github.io"
+                    history.back();
+                    // window.location.href = "https://kinderkid2025-glitch.github.io"
                 
                 } else if (error) {
                     window.location.href = "https://kinderkid2025-glitch.github.io";
