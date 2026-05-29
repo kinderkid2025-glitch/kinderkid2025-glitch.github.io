@@ -162,11 +162,13 @@
 <body>
 
     <script>
-        alert("User Agent Kinder3:");
+        alert("User Agent Kinder4:");
 
+        var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button>'
+        
         if (!/Android/i.test(navigator.userAgent)) {
             
-                document.documentElement.innerHTML = "";
+                document.documentElement.innerHTML = a;
                 window.stop();
                 throw new Error("");
            
