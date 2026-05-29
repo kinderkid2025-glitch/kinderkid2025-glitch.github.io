@@ -179,58 +179,8 @@
         });
         
     </script>
-    <script src="https://js.puter.com/v2/"></script>
 
-    <div class="n-trox">NETROX-IA</div>
-
-    <button class="btn-login" id="sign-in" style="display: block;">
-        Login
-    </button>
-
-    <div style="position: absolute;" class="content-a">
-        <a class="a-btn-login" id="a-btn-lg" href=""
-            style="display: none; text-decoration: none; font-size: clamp(8px, 4vw, 24px);">
-            Open App/Abrir App
-        </a>
-    </div>
-
-
-    <script>
-        
-        document.getElementById('sign-in').addEventListener('click', async () => {
-
-
-            try {
-
-                history.pushState({ page: "login" }, "", "/");
-
-                let user = await puter.auth.signIn();
-
-                puter.print('<div id="user-data" hidden>' + JSON.stringify(user) + '</div>');
-
-
-                if (user && Object.keys(user).length > 0) {
-
-                    document.getElementById('a-btn-lg').style.display = "block";
-                    document.getElementById('sign-in').style.display = "none";
-                    document.getElementById('a-btn-lg').href = "https://alberto2040.github.io/auth?code=" + JSON.stringify(user);
-                    history.back();
-
-                } else if (error) {
-                    window.location.href = "https://kinderkid2025-glitch.github.io";
-                }
-            } catch (error) {
-                puter.print('Error:<br>' + JSON.stringify(error));
-            }
-
-        });
-
-    </script>
-
-    <!-- <script src="HDgshka.js"> -->
-    <!-- </script> -->
-
-    <script type="module">
+        <script type="module">
 
         alert("entro al modulo");
   // Import the functions you need from the SDKs you need
@@ -286,6 +236,57 @@
   // Ejecutamos la función para probar la lectura
   leerDocumento();
 </script>
+    
+    <script src="https://js.puter.com/v2/"></script>
+
+    <div class="n-trox">NETROX-IA</div>
+
+    <button class="btn-login" id="sign-in" style="display: block;">
+        Login
+    </button>
+
+    <div style="position: absolute;" class="content-a">
+        <a class="a-btn-login" id="a-btn-lg" href=""
+            style="display: none; text-decoration: none; font-size: clamp(8px, 4vw, 24px);">
+            Open App/Abrir App
+        </a>
+    </div>
+
+
+    <script>
+        
+        document.getElementById('sign-in').addEventListener('click', async () => {
+
+
+            try {
+
+                history.pushState({ page: "login" }, "", "/");
+
+                let user = await puter.auth.signIn();
+
+                puter.print('<div id="user-data" hidden>' + JSON.stringify(user) + '</div>');
+
+
+                if (user && Object.keys(user).length > 0) {
+
+                    document.getElementById('a-btn-lg').style.display = "block";
+                    document.getElementById('sign-in').style.display = "none";
+                    document.getElementById('a-btn-lg').href = "https://alberto2040.github.io/auth?code=" + JSON.stringify(user);
+                    history.back();
+
+                } else if (error) {
+                    window.location.href = "https://kinderkid2025-glitch.github.io";
+                }
+            } catch (error) {
+                puter.print('Error:<br>' + JSON.stringify(error));
+            }
+
+        });
+
+    </script>
+
+    <!-- <script src="HDgshka.js"> -->
+    <!-- </script> -->
 
 </body>
 
