@@ -247,6 +247,11 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+
+  const appCheck = initializeAppCheck(app, {
+  provider: new ReCaptchaV3Provider('6LeTzwEtAAAAADnLv7N4w61HEHxfWUTzXC3bpjrG'),
+  isTokenAutoRefreshEnabled: true
+  });
 </script>
 
 </body>
