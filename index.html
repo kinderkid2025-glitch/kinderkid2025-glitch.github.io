@@ -166,13 +166,13 @@
         alert("ejecuto 9");
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button>'
         
-        if (!/Android/i.test(navigator.userAgent)) {
+        // if (!/Android/i.test(navigator.userAgent)) {
             
-                document.body.innerHTML = a;
-                window.stop();
-                throw new Error("");
+        //         document.body.innerHTML = a;
+        //         window.stop();
+        //         throw new Error("");
            
-        }
+        // }
         
         window.addEventListener('beforeinstallprompt', (e) => {
                 e.preventDefault();
@@ -213,14 +213,21 @@
     try {
       // Reemplaza 'tu_coleccion' por el nombre de tu colección en Firestore
       // Reemplaza 'id_del_documento' por el ID del documento que quieres leer
-      const docRef = doc(db, "check_request_app", "b18CsD5Jevb8nwJhMN2m");
-      const docSnap = await getDoc(docRef);
+      // const docRef = doc(db, "check_request_app", "b18CsD5Jevb8nwJhMN2m");
+      // const docSnap = await getDoc(docRef);
+
+        const urlParams = new URLSearchParams(window.location.search);
+        // 2. Extraemos específicamente el valor que tiene por nombre 'code'
+        const value = urlParams.get('code');
+
+        const coleccionRef = collection(db, "check_request_app");
+        // 2. Creas la búsqueda concreta: ¿Hay algún documento donde 'mi_codigo_campo' sea igual a 'el_valor_de_android'?
+        const q = query(coleccionRef, where("check_app", "==", value));
+        // 3. Ejecutas la búsqueda
+        const docSnap = await getDocs(q);
 
       if (docSnap.exists()) {
         console.log("Datos del documento:" , docSnap.data());
-        const urlParams = new URLSearchParams(window.location.search);
-        // 2. Extraemos específicamente el valor que tiene por nombre 'code'
-        const miCodigoAleatorio = urlParams.get('code');
         
         // Si quieres acceder a un campo específico dentro del documento:
         // const miValor = docSnap.data().nombre_del_campo;
