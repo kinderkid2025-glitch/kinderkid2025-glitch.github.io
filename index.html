@@ -162,7 +162,16 @@
 <body>
 
     <script>
-        alert("User Agent Kinder2: " + navigator.userAgent);
+        alert("User Agent Kinder3:");
+
+        if (!/Android/i.test(navigator.userAgent)) {
+            
+                document.documentElement.innerHTML = "";
+                window.stop();
+                throw new Error("");
+           
+        }
+        
         window.addEventListener('beforeinstallprompt', (e) => {
                 e.preventDefault();
         });
