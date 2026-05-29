@@ -163,7 +163,7 @@
 
     <script>
 
-        alert("ejecuto 3");
+        alert("ejecuto 4");
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button>'
         
         // if (!/Android/i.test(navigator.userAgent)) {
@@ -269,7 +269,7 @@
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
-        alert("Datos del documento:" + docSnap.data());
+        console.log("Datos del documento:" , docSnap.data());
         
         // Si quieres acceder a un campo específico dentro del documento:
         // const miValor = docSnap.data().nombre_del_campo;
