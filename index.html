@@ -163,7 +163,7 @@
 
     <script>
 
-        alert("ejecuto 7");
+        alert("ejecuto 8");
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button>'
         
         // if (!/Android/i.test(navigator.userAgent)) {
@@ -185,7 +185,6 @@
         alert("entro al modulo");
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-analytics.js";
   import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app-check.js";
   import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
 
@@ -201,7 +200,6 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
 
   const appCheck = initializeAppCheck(app, {
   provider: new ReCaptchaV3Provider('6LeTzwEtAAAAADnLv7N4w61HEHxfWUTzXC3bpjrG'),
