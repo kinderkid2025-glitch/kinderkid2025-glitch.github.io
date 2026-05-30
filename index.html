@@ -12,7 +12,7 @@
 
     <script>
 
-        alert("ejecuto 16");
+        alert("ejecuto 17");
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button>'
         
         // if (!/Android/i.test(navigator.userAgent)) {
@@ -84,7 +84,8 @@
             // });
             const doc = querySnapshot.docs[0];
             console.log(doc.data());
-            if(doc.data().toString() == code){
+            if(doc.data().check_app == code){
+                console.log("los campos son iguales);
                 alert("el dato es igual");
             }
         }
