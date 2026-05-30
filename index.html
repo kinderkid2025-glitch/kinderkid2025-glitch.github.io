@@ -216,13 +216,13 @@
       // const docRef = doc(db, "check_request_app", "b18CsD5Jevb8nwJhMN2m");
       // const docSnap = await getDoc(docRef);
 
-        const urlParams = new URLSearchParams(window.location.search);
-        // 2. Extraemos específicamente el valor que tiene por nombre 'code'
-        const value = urlParams.get('code');
+        // const urlParams = new URLSearchParams(window.location.search);
+        // // 2. Extraemos específicamente el valor que tiene por nombre 'code'
+        // const value = urlParams.get('code');
 
         const coleccionRef = collection(db, "check_request_app");
         // 2. Creas la búsqueda concreta: ¿Hay algún documento donde 'mi_codigo_campo' sea igual a 'el_valor_de_android'?
-        const q = query(coleccionRef, where("check_app", "==", value));
+        const q = query(coleccionRef, where("check_app", "==", "asjdhjksarekrjjrrtrt"));
         // 3. Ejecutas la búsqueda
         const docSnap = await getDocs(q);
 
