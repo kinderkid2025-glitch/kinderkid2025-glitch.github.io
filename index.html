@@ -72,16 +72,21 @@
 
         const coleccionRef = collection(db, "check_request_app");
         // 2. Creas la búsqueda concreta: ¿Hay algún documento donde 'mi_codigo_campo' sea igual a 'el_valor_de_android'?
-        const q = query(coleccionRef, where("check_app", "==", "asjdhjksarekrjjrrtrt"));
+        const q = query(coleccionRef, where("check_app", "==", code));
         // 3. Ejecutas la búsqueda
         // const docSnap = await getDocs(q);
 
         const querySnapshot = await getDocs(q);
 
         if (!querySnapshot.empty){
-            querySnapshot.forEach((doc) => {
-                console.log(doc.data());
-            });
+            // querySnapshot.forEach((doc) => {
+            //     console.log(doc.data());
+            // });
+            const doc = querySnapshot.docs[0];
+            console.log(doc.data());
+            if(doc.data().toString() == code){
+                alert("el dato es igual");
+            }
         }
 
        
