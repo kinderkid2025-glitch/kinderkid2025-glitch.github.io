@@ -12,7 +12,7 @@
 
     <script>
 
-        alert("ejecuto 19");
+        alert("ejecuto 20");
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button>'
         
         // if (!/Android/i.test(navigator.userAgent)) {
@@ -67,8 +67,13 @@
       // const docSnap = await getDoc(docRef);
 
         const urlParams = new URLSearchParams(window.location.search);
+
+        alert(window.location.href);
+        alert(window.location.search);
         // 2. Extraemos específicamente el valor que tiene por nombre 'code'
         const value = urlParams.get('tk');
+
+        alert("valor tk: " + value);
 
         const coleccionRef = collection(db, "check_request_app");
         // 2. Creas la búsqueda concreta: ¿Hay algún documento donde 'mi_codigo_campo' sea igual a 'el_valor_de_android'?
