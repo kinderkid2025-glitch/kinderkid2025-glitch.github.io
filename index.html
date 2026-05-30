@@ -163,7 +163,7 @@
 
     <script>
 
-        alert("ejecuto 9");
+        alert("ejecuto 10");
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button>'
         
         // if (!/Android/i.test(navigator.userAgent)) {
@@ -226,6 +226,11 @@
         // 3. Ejecutas la búsqueda
         const docSnap = await getDocs(q);
 
+        if (value == docSnap.data().toString()){
+
+            alert("los valores son iguales");
+            
+        }
       if (docSnap.exists()) {
         console.log("Datos del documento:" , docSnap.data());
         
