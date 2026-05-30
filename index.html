@@ -12,7 +12,7 @@
 
     <script>
 
-        alert("ejecuto 13");
+        alert("ejecuto 14");
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button>'
         
         // if (!/Android/i.test(navigator.userAgent)) {
@@ -75,23 +75,33 @@
         // 2. Creas la búsqueda concreta: ¿Hay algún documento donde 'mi_codigo_campo' sea igual a 'el_valor_de_android'?
         const q = query(coleccionRef, where("check_app", "==", "asjdhjksarekrjjrrtrt"));
         // 3. Ejecutas la búsqueda
-        const docSnap = await getDocs(q);
-        console.log("Datos del documento:" , docSnap.data());
+        // const docSnap = await getDocs(q);
+
+        const querySnapshot = await getDocs(q);
+
+        if (!querySnapshot.empty){
+            querySnapshot.forEach((doc) => {
+                console.log(doc.data());
+            });
+        }
+
+       
+        
         // if (value == docSnap.data().toString()){
 
         //     alert("los valores son iguales");
             
         // }
-      if (docSnap.exists()) {
-        console.log("Datos del documento:" , docSnap.data());
+      // if (docSnap.exists()) {
+      //   console.log("Datos del documento:" , docSnap.data());
         
-        // Si quieres acceder a un campo específico dentro del documento:
-        // const miValor = docSnap.data().nombre_del_campo;
-        // console.log("El valor es:", miValor);
+      //   // Si quieres acceder a un campo específico dentro del documento:
+      //   // const miValor = docSnap.data().nombre_del_campo;
+      //   // console.log("El valor es:", miValor);
         
-      } else {
-        console.log("¡El documento no existe en la base de datos!");
-      }
+      // } else {
+      //   console.log("¡El documento no existe en la base de datos!");
+      // }
     } catch (error) {
       console.error("Error al leer el documento:", error);
     }
