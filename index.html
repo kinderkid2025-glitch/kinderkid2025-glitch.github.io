@@ -12,7 +12,7 @@
 
     <script>
 
-        alert("inicio 3");
+        alert("inicio 4");
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button>'
         
         // if (!/Android/i.test(navigator.userAgent)) {
@@ -93,6 +93,8 @@
                 throw new Error("");
             }else{
                alert("son iguales");
+              const docRef = querySnapshot.docs[0].ref;
+              await deleteDoc(docRef);
             }
         }
 
@@ -102,8 +104,6 @@
             throw new Error("");
         }
 
-        const docRef = querySnapshot.docs[0].ref;
-        await deleteDoc(docRef);
       // if (docSnap.exists()) {
     
       //   // const miValor = docSnap.data().nombre_del_campo;
