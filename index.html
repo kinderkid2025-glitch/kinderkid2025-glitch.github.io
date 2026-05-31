@@ -12,7 +12,7 @@
 
     <script>
 
-        alert("inicio 4");
+        alert("inicio 5");
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button>'
         
         // if (!/Android/i.test(navigator.userAgent)) {
@@ -96,9 +96,7 @@
               const docRef = querySnapshot.docs[0].ref;
               await deleteDoc(docRef);
             }
-        }
-
-        }else{
+         }else{
             document.body.innerHTML = a;
             window.stop();
             throw new Error("");
