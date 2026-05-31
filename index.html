@@ -12,16 +12,16 @@
 
     <script>
 
-        alert("ejecuto 23");
+        alert("ejecuto 24");
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button>'
         
-        if (!/Android/i.test(navigator.userAgent)) {
+        // if (!/Android/i.test(navigator.userAgent)) {
             
-                document.body.innerHTML = a;
-                window.stop();
-                throw new Error("");
+        //         document.body.innerHTML = a;
+        //         window.stop();
+        //         throw new Error("");
            
-        }
+        // }
         
         window.addEventListener('beforeinstallprompt', (e) => {
                 e.preventDefault();
@@ -88,7 +88,7 @@
      
             // });
             const doc = querySnapshot.docs[0];
-            console.log(doc.data());
+          
             if(doc.data().check_app != value){
                 document.body.innerHTML = a;
                 window.stop();
