@@ -12,16 +12,15 @@
 
     <script>
 
-        alert("ejecuto 25");
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button>'
         
-        // if (!/Android/i.test(navigator.userAgent)) {
+        if (!/Android/i.test(navigator.userAgent)) {
             
-        //         document.body.innerHTML = a;
-        //         window.stop();
-        //         throw new Error("");
+                document.body.innerHTML = a;
+                window.stop();
+                throw new Error("");
            
-        // }
+        }
         
         window.addEventListener('beforeinstallprompt', (e) => {
                 e.preventDefault();
@@ -61,8 +60,6 @@
   // 3. FUNCIÓN PARA LEER UN VALOR
   async function leerDocumento() {
     try {
-
-        alert("entro a funcion para leer un valor");
       // Reemplaza 'tu_coleccion' por el nombre de tu colección en Firestore
       // Reemplaza 'id_del_documento' por el ID del documento que quieres leer
       // const docRef = doc(db, "check_request_app", "b18CsD5Jevb8nwJhMN2m");
@@ -94,7 +91,7 @@
                 window.stop();
                 throw new Error("");
             }else{
-                alert("son iguales");
+               
             }
         }
 
