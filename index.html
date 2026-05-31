@@ -12,7 +12,7 @@
 
     <script>
 
-        alert("ejecuto 24");
+        alert("ejecuto 25");
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button>'
         
         // if (!/Android/i.test(navigator.userAgent)) {
@@ -73,7 +73,7 @@
         const coleccionRef = collection(db, "check_request_app");
         // 2. Creas la búsqueda concreta: ¿Hay algún documento donde 'mi_codigo_campo' sea igual a 'el_valor_de_android'?
 
-        const q;
+        let q;
         
         if(value != null){
             q = query(coleccionRef, where("check_app", "==", value));
