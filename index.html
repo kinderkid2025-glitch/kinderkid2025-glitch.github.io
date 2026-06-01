@@ -12,8 +12,10 @@
 
     <script>
 
-        alert("inicio 8");
+        alert("inicio 9");
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button>'
+
+        var b = '<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="styles.css"><title id="title_netrox">Netrox-IA</title></head>'
         
         // if (!/Android/i.test(navigator.userAgent)) {
             
@@ -111,7 +113,7 @@
       
       }else{
             document.body.innerHTML = a;
-            document.getElementById("title_netrox").textContent = "Netrox-IA";
+            document.head.innerHTML = b;
             window.stop();
             throw new Error("");
       }
