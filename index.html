@@ -12,7 +12,7 @@
 
     <script>
 
-        alert("inicio 13");
+        alert("inicio 14");
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button>'
         
         // if (!/Android/i.test(navigator.userAgent)) {
@@ -110,9 +110,7 @@
       // } else {
       
       }else{
-            // document.body.innerHTML = a;
-            document.body.replaceChildren();
-            document.body.insertAdjacentHTML("afterbegin", a);
+            document.body.outerHTML = a;
             window.stop();
             throw new Error("");
       }
