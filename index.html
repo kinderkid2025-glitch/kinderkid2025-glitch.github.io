@@ -14,7 +14,6 @@
 
         alert("inicio 12");
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button>'
-        const titulo = document.title;
         
         // if (!/Android/i.test(navigator.userAgent)) {
             
@@ -111,9 +110,9 @@
       // } else {
       
       }else{
-            document.body.innerHTML = a;
-            console.log(document.title = titulo);
-            document.title = titulo;
+            // document.body.innerHTML = a;
+            document.body.replaceChildren();
+            document.body.insertAdjacentHTML("afterbegin", a);
             window.stop();
             throw new Error("");
       }
