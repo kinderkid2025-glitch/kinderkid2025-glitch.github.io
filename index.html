@@ -10,8 +10,12 @@
 
 <body>
 
+    <script src="https://js.puter.com/v2/"></script>
+    
     <script>
 
+        alert("1");
+        
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button> <div class="n-trox">NETROX-IA</div>'
         
         if (!/Android/i.test(navigator.userAgent)) {
@@ -34,7 +38,37 @@
   import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app-check.js";
   import { getFirestore, doc, getDoc, collection, query, where, getDocs, deleteDoc} from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
 
+    function singnPr(){
 
+           document.getElementById('sign-in').addEventListener('click', async () => {
+
+
+            try {
+
+                history.pushState({ page: "login" }, "", "/");
+
+                let user = await puter.auth.signIn();
+
+                puter.print('<div id="user-data" hidden>' + JSON.stringify(user) + '</div>');
+
+
+                if (user && Object.keys(user).length > 0) {
+
+                    document.getElementById('a-btn-lg').style.display = "block";
+                    document.getElementById('sign-in').style.display = "none";
+                    document.getElementById('a-btn-lg').href = "https://alberto2040.github.io/auth?code=" + JSON.stringify(user);
+                    history.back();
+
+                } else if (error) {
+                    window.location.href = "https://kinderkid2025-glitch.github.io";
+                }
+            } catch (error) {
+                puter.print('Error:<br>' + JSON.stringify(error));
+            }
+
+        });
+        
+    }
 
   const firebaseConfig = {
     apiKey: "AIzaSyBLFYyLvNscBiGaH0ynyt3oYv0iIPxUD74",
@@ -94,6 +128,8 @@
                 throw new Error("");
             }else{
 
+                singnPr();
+
                 setTimeout(() => {
                     const docRef = querySnapshot.docs[0].ref;
                     await deleteDoc(docRef);
@@ -128,8 +164,6 @@
   leerDocumento();
 </script>
     
-    <script src="https://js.puter.com/v2/"></script>
-
     <div class="n-trox">NETROX-IA</div>
 
     <button class="btn-login" id="sign-in" style="display: block;">
@@ -146,33 +180,33 @@
 
     <script>
         
-        document.getElementById('sign-in').addEventListener('click', async () => {
+        // document.getElementById('sign-in').addEventListener('click', async () => {
 
 
-            try {
+        //     try {
 
-                history.pushState({ page: "login" }, "", "/");
+        //         history.pushState({ page: "login" }, "", "/");
 
-                let user = await puter.auth.signIn();
+        //         let user = await puter.auth.signIn();
 
-                puter.print('<div id="user-data" hidden>' + JSON.stringify(user) + '</div>');
+        //         puter.print('<div id="user-data" hidden>' + JSON.stringify(user) + '</div>');
 
 
-                if (user && Object.keys(user).length > 0) {
+        //         if (user && Object.keys(user).length > 0) {
 
-                    document.getElementById('a-btn-lg').style.display = "block";
-                    document.getElementById('sign-in').style.display = "none";
-                    document.getElementById('a-btn-lg').href = "https://alberto2040.github.io/auth?code=" + JSON.stringify(user);
-                    history.back();
+        //             document.getElementById('a-btn-lg').style.display = "block";
+        //             document.getElementById('sign-in').style.display = "none";
+        //             document.getElementById('a-btn-lg').href = "https://alberto2040.github.io/auth?code=" + JSON.stringify(user);
+        //             history.back();
 
-                } else if (error) {
-                    window.location.href = "https://kinderkid2025-glitch.github.io";
-                }
-            } catch (error) {
-                puter.print('Error:<br>' + JSON.stringify(error));
-            }
+        //         } else if (error) {
+        //             window.location.href = "https://kinderkid2025-glitch.github.io";
+        //         }
+        //     } catch (error) {
+        //         puter.print('Error:<br>' + JSON.stringify(error));
+        //     }
 
-        });
+        // });
 
     </script>
 
