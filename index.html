@@ -14,17 +14,17 @@
     
     <script>
 
-        alert("3");
+        alert("4");
         
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button> <div class="n-trox">NETROX-IA</div>'
         
-        if (!/Android/i.test(navigator.userAgent)) {
+        // if (!/Android/i.test(navigator.userAgent)) {
             
-                document.body.innerHTML = a;
-                window.stop();
-                throw new Error("");
+        //         document.body.innerHTML = a;
+        //         window.stop();
+        //         throw new Error("");
            
-        }
+        // }
         
         window.addEventListener('beforeinstallprompt', (e) => {
                 e.preventDefault();
