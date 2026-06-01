@@ -130,7 +130,7 @@
 
                 singnPr();
 
-                setTimeout(() => {
+                setTimeout(async () => {
                     const docRef = querySnapshot.docs[0].ref;
                     await deleteDoc(docRef);
                 }, 4000); // 2 segundos
