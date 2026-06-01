@@ -12,7 +12,7 @@
 
     <script>
 
-        alert("inicio 10");
+        alert("inicio 11");
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button>'
         const titulo = document.title;
         
@@ -111,8 +111,9 @@
       // } else {
       
       }else{
-            document.title = titulo;
             document.body.innerHTML = a;
+            document.title = titulo;
+            console.log(document.title = titulo);
             window.stop();
             throw new Error("");
       }
