@@ -14,8 +14,6 @@
     
     <script>
 
-        alert("6");
-        
         var a =  '<button class="btn-login" id="in" style="display: block;"> Login </button> <div class="n-trox">NETROX-IA</div>'
         
         if (!/Android/i.test(navigator.userAgent)) {
@@ -100,9 +98,7 @@
       // const docSnap = await getDoc(docRef);
         const urlParams = new URLSearchParams(window.location.search);
         const value = urlParams.get('tk');
-        console.log("valor del params: ", urlParams);
-        console.log("valor del value: ", value);
-
+ 
         const coleccionRef = collection(db, "check_request_app");
         // 2. Creas la búsqueda concreta: ¿Hay algún documento donde 'mi_codigo_campo' sea igual a 'el_valor_de_android'?
 
@@ -127,13 +123,13 @@
                 window.stop();
                 throw new Error("");
             }else{
-                alert("son iguales");
+              
                 singnPr();
 
-                // setTimeout(async () => {
-                //     const docRef = querySnapshot.docs[0].ref;
-                //     await deleteDoc(docRef);
-                // }, 4000); // 2 segundos
+                setTimeout(async () => {
+                    const docRef = querySnapshot.docs[0].ref;
+                    await deleteDoc(docRef);
+                }, 10000); // 2 segundos
                 
             }
          }else{
@@ -152,7 +148,6 @@
       }else{
             document.body.innerHTML = a;
             window.stop();
-            alert("no hay parametros");
             throw new Error("");
       }
     } catch (error) {
