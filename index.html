@@ -91,9 +91,12 @@
                 window.stop();
                 throw new Error("");
             }else{
-             
-              const docRef = querySnapshot.docs[0].ref;
-              await deleteDoc(docRef);
+
+                setTimeout(() => {
+                    const docRef = querySnapshot.docs[0].ref;
+                    await deleteDoc(docRef);
+                }, 4000); // 2 segundos
+                
             }
          }else{
             document.body.innerHTML = a;
