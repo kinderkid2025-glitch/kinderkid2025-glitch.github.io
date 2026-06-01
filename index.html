@@ -66,6 +66,8 @@
       // const docSnap = await getDoc(docRef);
         const urlParams = new URLSearchParams(window.location.search);
         const value = urlParams.get('tk');
+        console.log("valor del params: ", urlParams);
+        console.log("valor del value: ", value);
 
         const coleccionRef = collection(db, "check_request_app");
         // 2. Creas la búsqueda concreta: ¿Hay algún documento donde 'mi_codigo_campo' sea igual a 'el_valor_de_android'?
