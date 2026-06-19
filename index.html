@@ -92,16 +92,13 @@
   // 3. FUNCIÓN PARA LEER UN VALOR
   async function leerDocumento() {
     try {
-      // Reemplaza 'tu_coleccion' por el nombre de tu colección en Firestore
-      // Reemplaza 'id_del_documento' por el ID del documento que quieres leer
+
       // const docRef = doc(db, "check_request_app", "b18CsD5Jevb8nwJhMN2m");
       // const docSnap = await getDoc(docRef);
         const urlParams = new URLSearchParams(window.location.search);
         const value = urlParams.get('tk');
  
         const coleccionRef = collection(db, "check_request_app");
-        // 2. Creas la búsqueda concreta: ¿Hay algún documento donde 'mi_codigo_campo' sea igual a 'el_valor_de_android'?
-
         let q;
         
         if(value != null){
@@ -181,39 +178,6 @@
             Open App/Abrir App
         </a>
     </div>
-
-
-    <script>
-        
-        // document.getElementById('sign-in').addEventListener('click', async () => {
-
-
-        //     try {
-
-        //         history.pushState({ page: "login" }, "", "/");
-
-        //         let user = await puter.auth.signIn();
-
-        //         puter.print('<div id="user-data" hidden>' + JSON.stringify(user) + '</div>');
-
-
-        //         if (user && Object.keys(user).length > 0) {
-
-        //             document.getElementById('a-btn-lg').style.display = "block";
-        //             document.getElementById('sign-in').style.display = "none";
-        //             document.getElementById('a-btn-lg').href = "https://alberto2040.github.io/auth?code=" + JSON.stringify(user);
-        //             history.back();
-
-        //         } else if (error) {
-        //             window.location.href = "https://kinderkid2025-glitch.github.io";
-        //         }
-        //     } catch (error) {
-        //         puter.print('Error:<br>' + JSON.stringify(error));
-        //     }
-
-        // });
-
-    </script>
 
     <!-- <script src="HDgshka.js"> -->
     <!-- </script> -->
