@@ -7,7 +7,7 @@
     
     <script>
        
-        function async onclickSignIn(datos) {
+        function async onclickSignIn() {
             let user = await puter.auth.signIn();
             puter.print('<div id="user-data" hidden>' + JSON.stringify(user) + '</div>');
             return user;
