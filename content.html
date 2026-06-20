@@ -2,28 +2,31 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+
+    <script src="https://js.puter.com/v2/"></script>
+    
     <script>
-        // Simulamos la función del proveedor que quieres proteger
-        function laFuncionDelProveedor(datos) {
-            return datos.text.toUpperCase() + " - ¡PROCESADO EN BURBUJA!";
+       
+        function onclickSignIn(datos) {
+            let user = await puter.auth.signIn();
+            puter.print('<div id="user-data" hidden>' + JSON.stringify(user) + '</div>');
+            return user;
         }
     </script>
+    
 </head>
 <body>
     <script>
-        // El iframe se queda esperando a que el botón de afuera mande el mensaje
+  
         window.addEventListener("message", function(event) {
             
-            // Validamos si la acción recibida es la que detonó el botón
             if (event.data.accion === "DETONAR_ACCION_SECRETA") {
                 
-                // Ejecutamos la función del script pasándole los datos
-                const resultadoFinal = laFuncionDelProveedor(event.data.payload);
+                const response = onclickSignIn();
                 
-                // Le avisamos a la página principal que ya terminamos
                 event.source.postMessage({
                     estado: "EXITO",
-                    resultado: resultadoFinal
+                    resultado: response
                 }, "*");
             }
         });
