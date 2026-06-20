@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        // Simulamos la función del proveedor que quieres proteger
+        function laFuncionDelProveedor(datos) {
+            return datos.text.toUpperCase() + " - ¡PROCESADO EN BURBUJA!";
+        }
+    </script>
+</head>
+<body>
+    <script>
+        // El iframe se queda esperando a que el botón de afuera mande el mensaje
+        window.addEventListener("message", function(event) {
+            
+            // Validamos si la acción recibida es la que detonó el botón
+            if (event.data.accion === "DETONAR_ACCION_SECRETA") {
+                
+                // Ejecutamos la función del script pasándole los datos
+                const resultadoFinal = laFuncionDelProveedor(event.data.payload);
+                
+                // Le avisamos a la página principal que ya terminamos
+                event.source.postMessage({
+                    estado: "EXITO",
+                    resultado: resultadoFinal
+                }, "*");
+            }
+        });
+    </script>
+</body>
+</html>
