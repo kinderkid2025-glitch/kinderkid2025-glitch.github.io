@@ -23,7 +23,7 @@
             
             if (event.data.accion === "StartFunction") {
                 
-                const response = onclickSignIn();
+                const response = await onclickSignIn();
                 
                 event.source.postMessage({
                     estado: "EXITO",
