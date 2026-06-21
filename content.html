@@ -25,10 +25,10 @@
             if (event.data.accion === "StartFunction") {
                 
                 const response = await onclickSignIn();
-                
+                const datosPuros = JSON.parse(JSON.stringify(response));
                 event.source.postMessage({
                     estado: "EXITO",
-                    resultado: response
+                    resultado: datosPuros
                 }, "*");
             }
         });
