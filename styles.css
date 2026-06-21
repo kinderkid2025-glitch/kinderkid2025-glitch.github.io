@@ -147,3 +147,42 @@ body,
         .btn-login:hover::before {
             left: 100%;
         }
+
+#pantalla-carga {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo negro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999999; /* Asegura que esté por encima de TODO */
+    pointer-events: auto; /* Bloquea por completo los clics hacia el fondo */
+    transition: opacity 0.4s ease, visibility 0.4s ease; /* Transición suave al desaparecer */
+}
+
+/* El círculo del Spinner */
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(255, 255, 255, 0.2); /* Círculo de fondo claro difuminado */
+    border-top-color: #ffffff; /* Color de la línea que gira (Blanco puro) */
+    border-radius: 50%;
+    animation: girar 1s linear infinite; /* Animación infinita */
+}
+
+/* Animación de rotación */
+@keyframes girar {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Clase auxiliar para ocultarlo con suavidad */
+.ocultar-carga {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important; /* Devuelve el control de clics a la página */
+}
