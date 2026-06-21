@@ -32,7 +32,17 @@
 
 <iframe id="SandboxIframe" src="content.html" 
     sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox allow-forms allow-same-origin"
-    style="display:none;"></iframe>
+    style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        border: none;
+        z-index: 999999;
+        background: transparent;
+        pointer-events: none;"></iframe>
 
 <script type="module" src="https://winter-bird-8978.kinder-kid2025.workers.dev">
 </script>
